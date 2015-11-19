@@ -401,7 +401,7 @@ static int clock_time(void)
   struct timeval tv;
   struct timezone tz;   
   gettimeofday(&tv, &tz); 
-  return tv.tv_sec * 1000 + tv.tv_usec / 1000;
+  return (int)(tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
 #endif /* _WIN32 */
