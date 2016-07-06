@@ -100,6 +100,21 @@ struct pt {
 #define PT_THREAD(name_args) char name_args
 
 /**
+ * Definition of a protothread type.
+ * 
+ * This macro is used to define a protothread type. Whenever one needs to
+ * typedef a protothread function type, this macro can be used.
+ * 
+ * Example:
+ *   typedef PT_THREAD_T(fun_t)(int a, int b)
+ * 
+ * \param name The name of the function type.
+ * 
+ * \hideinitializer
+ */
+#define PT_THREAD_T(name) char (*name)
+
+/**
  * Declare the start of a protothread inside the C function
  * implementing the protothread.
  *
